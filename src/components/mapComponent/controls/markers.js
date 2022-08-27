@@ -4,7 +4,7 @@ import 'leaflet-marker-rotation/src/rotatedMarker';
 export var dynamicMarker=(icono, coords,angle)=>{
     return L.rotatedMarker(coords, {
         icon: icono,
-        rotationOrigin:'center',
+        rotationOrigin: center ,
         rotationAngle: angle
     });
 }

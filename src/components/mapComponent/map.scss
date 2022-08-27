@@ -1,10 +1,14 @@
 @import '../../scss/sizes.scss';
+
 #map { 
   height:  100vh; 
-  position:absolute;
+  min-width: 100%;
+  position:relative;
   right:0;
   top:0;
   bottom:0;
+ 
+  
   
   @include tablet{
     &.nonactive{
@@ -21,6 +25,7 @@
       width: calc(100% - 46px);
       width: -moz-calc(100% - 46px);
       width: -webkit-calc(100% - 46px);
+     
     } 
   }
 }

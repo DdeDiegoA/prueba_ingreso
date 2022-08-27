@@ -1,6 +1,6 @@
 // variables:
 $tablet-width: 768px;
-$desktop-width: 1024px;
+$desktop-width: 1025px;
 
 @mixin tablet {
   @media (max-width: #{$tablet-width - 1px}) {

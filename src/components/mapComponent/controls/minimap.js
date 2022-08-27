@@ -7,8 +7,8 @@ import {standard_osm_mm} from '../layers/control-layers'
 
 export var minimap= new L.Control.MiniMap(standard_osm_mm, 
 { 
-    toggleDisplay: true ,
-    minimized:true,
+    toggleDisplay: true,
+    minimized:false,
     position: "bottomleft"
 })
 
