@@ -17,30 +17,24 @@ export var map = L.map("map", {
 });
 
 
-//Marker
-const repelon = L.marker([10.496444444444, -75.124166666667], {
-  icon: imgIcon('marker-icon.28bcaf97.png', [25, 41]),
-  }).addTo(map);
-  map.on('move', function () {
-		marker.setLatLng(map.getCenter());
-		//console.log(map.getCenter());
-	});
-	//Dragend event of map for update marker position
-	map.on('dragend', function(e) {
-		var cnt = map.getCenter();
-	        var position = marker.getLatLng();
-		lat = Number(position['lat']).toFixed(5);
-		lng = Number(position['lng']).toFixed(5);
-		//console.log(position);
-		setLeafLatLong(lat, lng);
-		
-	});
-// const center = L.marker([0, 0], {
-//     icon: imgIcon('marker-icon.28bcaf97.png', [25, 41]),
-//     }).addTo(map);
+//marker center map
+var lat =10.49644444444;
+var lon =-75.124166666667;
+var marker = L.marker([lat, lon],{
+  icon:imgIcon('marker-icon.28bcaf97.png', [25, 41]),
+  draggable: true,
+  autoPan: true
+}).addTo(map);
 
-// // //location REPELON
-// map.fitBounds([[repelon.getLatLng().lat, repelon.getLatLng().lng]]).setZoom(15);
+map.on("moveend", function () {
+  marker.setLatLng(map.getCenter())
+})
+
+marker.on("move", function (obj) {
+  const newCoord = obj.latlng
+
+})
+
 
 //minimap
 minimap.addTo(map);
