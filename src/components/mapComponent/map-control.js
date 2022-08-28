@@ -26,7 +26,7 @@ var marker = L.marker([lat, lon],{
   autoPan: true
 }).addTo(map);
 
-map.on("moveend", function () {
+map.on("move", function () {
   marker.setLatLng(map.getCenter())
 })
 
